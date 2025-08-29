@@ -37,6 +37,15 @@
         "tsConfigPath": "apps/device-service/tsconfig.app.json"
       }
     },
+    "file-service": {
+      "type": "application",
+      "root": "apps/file-service",
+      "entryFile": "main",
+      "sourceRoot": "apps/file-service/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/file-service/tsconfig.app.json"
+      }
+    },
     "nest-monorepo": {
       "type": "application",
       "root": "apps/nest-monorepo",
