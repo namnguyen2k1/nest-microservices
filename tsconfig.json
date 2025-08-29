@@ -41,6 +41,12 @@
       ],
       "mail/mail/*": [
         "libs/mail/src/*"
+      ],
+      "queue/queue": [
+        "libs/queue/src"
+      ],
+      "queue/queue/*": [
+        "libs/queue/src/*"
       ]
     }
   }

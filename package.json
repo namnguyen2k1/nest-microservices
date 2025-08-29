@@ -78,7 +78,8 @@
       "^cache/cache(|/.*)$": "<rootDir>/libs/cache/src/$1",
       "^config/config(|/.*)$": "<rootDir>/libs/config/src/$1",
       "^database/database(|/.*)$": "<rootDir>/libs/database/src/$1",
-      "^mail/mail(|/.*)$": "<rootDir>/libs/mail/src/$1"
+      "^mail/mail(|/.*)$": "<rootDir>/libs/mail/src/$1",
+      "^queue/queue(|/.*)$": "<rootDir>/libs/queue/src/$1"
     }
   }
 }
