@@ -37,6 +37,15 @@
         "tsConfigPath": "apps/nest-monorepo/tsconfig.app.json"
       }
     },
+    "otp-service": {
+      "type": "application",
+      "root": "apps/otp-service",
+      "entryFile": "main",
+      "sourceRoot": "apps/otp-service/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/otp-service/tsconfig.app.json"
+      }
+    },
     "role-service": {
       "type": "application",
       "root": "apps/role-service",
