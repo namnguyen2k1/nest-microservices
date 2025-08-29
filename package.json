@@ -75,6 +75,7 @@
       "<rootDir>/libs/"
     ],
     "moduleNameMapper": {
+      "^cache/cache(|/.*)$": "<rootDir>/libs/cache/src/$1",
       "^database/database(|/.*)$": "<rootDir>/libs/database/src/$1"
     }
   }

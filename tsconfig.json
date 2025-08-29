@@ -18,6 +18,12 @@
     "strictBindCallApply": false,
     "noFallthroughCasesInSwitch": false,
     "paths": {
+      "cache/cache": [
+        "libs/cache/src"
+      ],
+      "cache/cache/*": [
+        "libs/cache/src/*"
+      ],
       "database/database": [
         "libs/database/src"
       ],
