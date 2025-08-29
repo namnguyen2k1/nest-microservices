@@ -24,6 +24,12 @@
       "cache/cache/*": [
         "libs/cache/src/*"
       ],
+      "config/config": [
+        "libs/config/src"
+      ],
+      "config/config/*": [
+        "libs/config/src/*"
+      ],
       "database/database": [
         "libs/database/src"
       ],
