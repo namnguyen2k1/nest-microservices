@@ -3,6 +3,7 @@ export * from "./shared.service";
 
 // utils
 export * from "./utils/format-date";
+export * from "./utils/get-expired-date";
 export * from "./utils/log-obj";
 export * from "./utils/mongoid-transform";
 export * from "./utils/parse-ip-location";
