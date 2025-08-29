@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "@nestjs/common": "^11.0.1",
+    "@nestjs/config": "^4.0.2",
     "@nestjs/core": "^11.0.1",
     "@nestjs/microservices": "^11.1.6",
     "@nestjs/platform-express": "^11.0.1",
@@ -80,7 +81,8 @@
       "^config/config(|/.*)$": "<rootDir>/libs/config/src/$1",
       "^database/database(|/.*)$": "<rootDir>/libs/database/src/$1",
       "^mail/mail(|/.*)$": "<rootDir>/libs/mail/src/$1",
-      "^queue/queue(|/.*)$": "<rootDir>/libs/queue/src/$1"
+      "^queue/queue(|/.*)$": "<rootDir>/libs/queue/src/$1",
+      "^shared/shared(|/.*)$": "<rootDir>/libs/shared/src/$1"
     }
   }
 }
