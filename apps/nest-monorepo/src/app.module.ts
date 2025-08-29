@@ -1,10 +1,11 @@
+import { CachingModule } from "@cache/caching.module";
 import { DatabaseModule } from "@database/database.module";
 import { Module } from "@nestjs/common";
 import { AppController } from "./app.controller";
 import { AppService } from "./app.service";
 
 @Module({
-  imports: [DatabaseModule],
+  imports: [DatabaseModule, CachingModule],
   controllers: [AppController],
   providers: [AppService],
 })
