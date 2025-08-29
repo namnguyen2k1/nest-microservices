@@ -28,6 +28,15 @@
         "tsConfigPath": "apps/nest-monorepo/tsconfig.app.json"
       }
     },
+    "role-service": {
+      "type": "application",
+      "root": "apps/role-service",
+      "entryFile": "main",
+      "sourceRoot": "apps/role-service/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/role-service/tsconfig.app.json"
+      }
+    },
     "user-service": {
       "type": "application",
       "root": "apps/user-service",
