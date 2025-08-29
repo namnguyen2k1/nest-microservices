@@ -37,6 +37,15 @@
         "tsConfigPath": "apps/nest-monorepo/tsconfig.app.json"
       }
     },
+    "notification-service": {
+      "type": "application",
+      "root": "apps/notification-service",
+      "entryFile": "main",
+      "sourceRoot": "apps/notification-service/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/notification-service/tsconfig.app.json"
+      }
+    },
     "otp-service": {
       "type": "application",
       "root": "apps/otp-service",
