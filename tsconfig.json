@@ -24,6 +24,12 @@
       "cache/cache/*": [
         "libs/cache/src/*"
       ],
+      "common/common": [
+        "libs/common/src"
+      ],
+      "common/common/*": [
+        "libs/common/src/*"
+      ],
       "config/config": [
         "libs/config/src"
       ],
