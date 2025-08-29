@@ -1,5 +1,5 @@
-import { Controller, Get } from '@nestjs/common';
-import { OtpServiceService } from './otp-service.service';
+import { Controller, Get } from "@nestjs/common";
+import { OtpServiceService } from "./otp-service.service";
 
 @Controller()
 export class OtpServiceController {

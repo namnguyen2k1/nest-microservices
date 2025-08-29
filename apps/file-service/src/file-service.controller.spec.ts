@@ -1,8 +1,8 @@
-import { Test, TestingModule } from '@nestjs/testing';
-import { FileServiceController } from './file-service.controller';
-import { FileServiceService } from './file-service.service';
+import { Test, TestingModule } from "@nestjs/testing";
+import { FileServiceController } from "./file-service.controller";
+import { FileServiceService } from "./file-service.service";
 
-describe('FileServiceController', () => {
+describe("FileServiceController", () => {
   let fileServiceController: FileServiceController;
 
   beforeEach(async () => {
@@ -11,14 +11,12 @@ describe('FileServiceController', () => {
       providers: [FileServiceService],
     }).compile();
 
-    fileServiceController = app.get<FileServiceController>(
-      FileServiceController,
-    );
+    fileServiceController = app.get<FileServiceController>(FileServiceController);
   });
 
-  describe('root', () => {
+  describe("root", () => {
     it('should return "Hello World!"', () => {
-      expect(fileServiceController.getHello()).toBe('Hello World!');
+      expect(fileServiceController.getHello()).toBe("Hello World!");
     });
   });
 });

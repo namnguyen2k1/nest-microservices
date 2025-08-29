@@ -1,5 +1,5 @@
-import { NestFactory } from '@nestjs/core';
-import { RoleServiceModule } from './role-service.module';
+import { NestFactory } from "@nestjs/core";
+import { RoleServiceModule } from "./role-service.module";
 
 async function bootstrap() {
   const app = await NestFactory.create(RoleServiceModule);

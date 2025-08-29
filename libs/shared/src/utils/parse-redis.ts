@@ -12,14 +12,14 @@ export function parseRedis(url: string) {
     };
     return redis;
   } catch (error) {
-    console.log('parse redis error', error);
+    console.log("parse redis error", error);
     return {
       url: url,
-      host: '',
+      host: "",
       port: 6379,
-      username: '',
-      password: '',
-      database: '',
+      username: "",
+      password: "",
+      database: "",
     };
   }
 }

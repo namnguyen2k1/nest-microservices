@@ -1,5 +1,5 @@
-import { NestFactory } from '@nestjs/core';
-import { WalletServiceModule } from './wallet-service.module';
+import { NestFactory } from "@nestjs/core";
+import { WalletServiceModule } from "./wallet-service.module";
 
 async function bootstrap() {
   const app = await NestFactory.create(WalletServiceModule);

@@ -1,10 +1,10 @@
-import { ConfigurationModule } from '@config/config.module';
-import databaseConfig from '@config/configs/database.config';
-import { Module, OnModuleInit } from '@nestjs/common';
-import { MongooseModule } from '@nestjs/mongoose';
-import mongoose from 'mongoose';
-import { createMongoDbConfig } from './config-database';
-import { DB_CONNECTION } from './constant';
+import { ConfigurationModule } from "@config/config.module";
+import databaseConfig from "@config/configs/database.config";
+import { Module, OnModuleInit } from "@nestjs/common";
+import { MongooseModule } from "@nestjs/mongoose";
+import mongoose from "mongoose";
+import { createMongoDbConfig } from "./config-database";
+import { DB_CONNECTION } from "./constant";
 
 @Module({
   imports: [
@@ -18,8 +18,8 @@ import { DB_CONNECTION } from './constant';
 })
 export class MongodbModule implements OnModuleInit {
   onModuleInit() {
-    mongoose.set('runValidators', true);
-    mongoose.set('strictQuery', true);
-    mongoose.set('debug', true);
+    mongoose.set("runValidators", true);
+    mongoose.set("strictQuery", true);
+    mongoose.set("debug", true);
   }
 }

@@ -1,5 +1,5 @@
-import { NestFactory } from '@nestjs/core';
-import { OtpServiceModule } from './otp-service.module';
+import { NestFactory } from "@nestjs/core";
+import { OtpServiceModule } from "./otp-service.module";
 
 async function bootstrap() {
   const app = await NestFactory.create(OtpServiceModule);

@@ -1,5 +1,5 @@
-import { Controller, Get } from '@nestjs/common';
-import { WalletServiceService } from './wallet-service.service';
+import { Controller, Get } from "@nestjs/common";
+import { WalletServiceService } from "./wallet-service.service";
 
 @Controller()
 export class WalletServiceController {

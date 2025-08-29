@@ -1,8 +1,8 @@
-import { Test, TestingModule } from '@nestjs/testing';
-import { NotificationServiceController } from './notification-service.controller';
-import { NotificationServiceService } from './notification-service.service';
+import { Test, TestingModule } from "@nestjs/testing";
+import { NotificationServiceController } from "./notification-service.controller";
+import { NotificationServiceService } from "./notification-service.service";
 
-describe('NotificationServiceController', () => {
+describe("NotificationServiceController", () => {
   let notificationServiceController: NotificationServiceController;
 
   beforeEach(async () => {
@@ -16,9 +16,9 @@ describe('NotificationServiceController', () => {
     );
   });
 
-  describe('root', () => {
+  describe("root", () => {
     it('should return "Hello World!"', () => {
-      expect(notificationServiceController.getHello()).toBe('Hello World!');
+      expect(notificationServiceController.getHello()).toBe("Hello World!");
     });
   });
 });

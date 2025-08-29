@@ -1,8 +1,8 @@
-import { Test, TestingModule } from '@nestjs/testing';
-import { DeviceServiceController } from './device-service.controller';
-import { DeviceServiceService } from './device-service.service';
+import { Test, TestingModule } from "@nestjs/testing";
+import { DeviceServiceController } from "./device-service.controller";
+import { DeviceServiceService } from "./device-service.service";
 
-describe('DeviceServiceController', () => {
+describe("DeviceServiceController", () => {
   let deviceServiceController: DeviceServiceController;
 
   beforeEach(async () => {
@@ -11,14 +11,12 @@ describe('DeviceServiceController', () => {
       providers: [DeviceServiceService],
     }).compile();
 
-    deviceServiceController = app.get<DeviceServiceController>(
-      DeviceServiceController,
-    );
+    deviceServiceController = app.get<DeviceServiceController>(DeviceServiceController);
   });
 
-  describe('root', () => {
+  describe("root", () => {
     it('should return "Hello World!"', () => {
-      expect(deviceServiceController.getHello()).toBe('Hello World!');
+      expect(deviceServiceController.getHello()).toBe("Hello World!");
     });
   });
 });

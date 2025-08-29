@@ -1,5 +1,5 @@
-import { NestFactory } from '@nestjs/core';
-import { AssistantServiceModule } from './assistant-service.module';
+import { NestFactory } from "@nestjs/core";
+import { AssistantServiceModule } from "./assistant-service.module";
 
 async function bootstrap() {
   const app = await NestFactory.create(AssistantServiceModule);

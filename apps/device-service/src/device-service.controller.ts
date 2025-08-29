@@ -1,5 +1,5 @@
-import { Controller, Get } from '@nestjs/common';
-import { DeviceServiceService } from './device-service.service';
+import { Controller, Get } from "@nestjs/common";
+import { DeviceServiceService } from "./device-service.service";
 
 @Controller()
 export class DeviceServiceController {

@@ -1,5 +1,5 @@
-import { NestFactory } from '@nestjs/core';
-import { DeviceServiceModule } from './device-service.module';
+import { NestFactory } from "@nestjs/core";
+import { DeviceServiceModule } from "./device-service.module";
 
 async function bootstrap() {
   const app = await NestFactory.create(DeviceServiceModule);

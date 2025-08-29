@@ -1,8 +1,8 @@
-import { Test, TestingModule } from '@nestjs/testing';
-import { OtpServiceController } from './otp-service.controller';
-import { OtpServiceService } from './otp-service.service';
+import { Test, TestingModule } from "@nestjs/testing";
+import { OtpServiceController } from "./otp-service.controller";
+import { OtpServiceService } from "./otp-service.service";
 
-describe('OtpServiceController', () => {
+describe("OtpServiceController", () => {
   let otpServiceController: OtpServiceController;
 
   beforeEach(async () => {
@@ -14,9 +14,9 @@ describe('OtpServiceController', () => {
     otpServiceController = app.get<OtpServiceController>(OtpServiceController);
   });
 
-  describe('root', () => {
+  describe("root", () => {
     it('should return "Hello World!"', () => {
-      expect(otpServiceController.getHello()).toBe('Hello World!');
+      expect(otpServiceController.getHello()).toBe("Hello World!");
     });
   });
 });

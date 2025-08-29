@@ -1,8 +1,8 @@
-import { Test, TestingModule } from '@nestjs/testing';
-import { WalletServiceController } from './wallet-service.controller';
-import { WalletServiceService } from './wallet-service.service';
+import { Test, TestingModule } from "@nestjs/testing";
+import { WalletServiceController } from "./wallet-service.controller";
+import { WalletServiceService } from "./wallet-service.service";
 
-describe('WalletServiceController', () => {
+describe("WalletServiceController", () => {
   let walletServiceController: WalletServiceController;
 
   beforeEach(async () => {
@@ -11,14 +11,12 @@ describe('WalletServiceController', () => {
       providers: [WalletServiceService],
     }).compile();
 
-    walletServiceController = app.get<WalletServiceController>(
-      WalletServiceController,
-    );
+    walletServiceController = app.get<WalletServiceController>(WalletServiceController);
   });
 
-  describe('root', () => {
+  describe("root", () => {
     it('should return "Hello World!"', () => {
-      expect(walletServiceController.getHello()).toBe('Hello World!');
+      expect(walletServiceController.getHello()).toBe("Hello World!");
     });
   });
 });
