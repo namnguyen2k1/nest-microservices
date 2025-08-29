@@ -1,8 +1,7 @@
 import { Controller, Get, Param, Req } from "@nestjs/common";
 import { ApiBearerAuth, ApiTags } from "@nestjs/swagger";
 import { MongoIdPipe } from "@shared/pipes/mongoid.pipe";
-import { parseIpWithLocation } from "@shared/utils/parse-ip-location";
-import { parseUserAgent } from "@shared/utils/parse-user-agent";
+import { parseIpWithLocation, parseUserAgent } from "@shared/utils";
 import { Request } from "express";
 import { DeviceService } from "./device.service";
 

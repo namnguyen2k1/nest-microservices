@@ -1,4 +1,4 @@
-import { MongoIdPipe } from "@shared/pipes/mongoid.pipe";
+import { MongoIdPipe } from "@shared/pipes";
 import { Transform } from "class-transformer";
 
 export function MongoIdTransform() {

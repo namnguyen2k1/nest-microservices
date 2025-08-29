@@ -3,13 +3,13 @@ import { BaseRepositoryAbstract } from "@database/repositories/abstract.reposito
 import { Injectable } from "@nestjs/common";
 import { InjectConnection, InjectModel } from "@nestjs/mongoose";
 import { Connection, Model } from "mongoose";
-import { Role } from "../models/role.model";
+import { RoleModel } from "../models/role.model";
 
 @Injectable()
-export class RoleRepository extends BaseRepositoryAbstract<Role> {
+export class RoleRepository extends BaseRepositoryAbstract<RoleModel> {
   constructor(
     @InjectModel(DB_COLLECTION.ROLE, DB_CONNECTION.PLAYGROUND)
-    readonly model: Model<Role>,
+    readonly model: Model<RoleModel>,
 
     @InjectConnection(DB_CONNECTION.PLAYGROUND)
     readonly connection: Connection,

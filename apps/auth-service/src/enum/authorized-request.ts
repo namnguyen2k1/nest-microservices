@@ -1,6 +1,4 @@
-import { PERMISSION_KEY } from "apps/role-service/src/models/permission.model";
-import { ROLE_KEY } from "apps/role-service/src/models/role.model";
-import { User } from "apps/user-service/src/models/user.model";
+import { PERMISSION_KEY, ROLE_KEY, User } from "@shared/types";
 import { Request } from "express";
 
 export interface AuthContext {

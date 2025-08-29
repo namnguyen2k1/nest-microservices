@@ -1,6 +1,6 @@
 import { Body, Controller, Ip, Post, Req } from "@nestjs/common";
 import { ApiBearerAuth, ApiTags } from "@nestjs/swagger";
-import { parseUserAgent } from "@shared/utils/parse-user-agent";
+import { parseUserAgent } from "@shared/utils";
 import { Request } from "express";
 import { AuthService } from "./auth.service";
 import { PublicAPI } from "./decorators/public-api.decorator";

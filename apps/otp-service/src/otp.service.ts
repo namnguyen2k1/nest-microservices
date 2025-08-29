@@ -1,9 +1,9 @@
 import { Injectable, NotFoundException } from "@nestjs/common";
-import { toObjectId } from "@shared/utils/to-object-id";
+import { OTP, OTP_TYPE } from "@shared/types";
+import { toObjectId } from "@shared/utils";
 import { randomInt } from "crypto";
 import { FilterQuery } from "mongoose";
 import { CreateOtpDTO } from "./dto/create-otp.dto";
-import { OTP, OTP_TYPE } from "./otp.model";
 import { OTPRepository } from "./otp.repository";
 
 @Injectable()

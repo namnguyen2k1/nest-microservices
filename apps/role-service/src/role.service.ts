@@ -1,10 +1,9 @@
 import { ConflictException, Injectable, NotFoundException } from "@nestjs/common";
 
 import { CachingService } from "@cache/caching.service";
-import { logObj, parsePaging, toObjectId } from "@shared/index";
+import { Permission, PERMISSION_KEY, Role, ROLE_KEY, ROLE_STATUS } from "@shared/types";
+import { logObj, parsePaging, toObjectId } from "@shared/utils";
 import { FilterQuery } from "mongoose";
-import { Permission, PERMISSION_KEY } from "./models/permission.model";
-import { Role, ROLE_KEY, ROLE_STATUS } from "./models/role.model";
 import { PermissionRepository } from "./repositories/permission.repository";
 import { RolePermissionRepository } from "./repositories/role-permission.repository";
 import { RoleRepository } from "./repositories/role.repository";

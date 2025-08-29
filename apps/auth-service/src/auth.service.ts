@@ -12,14 +12,10 @@ import {
 } from "@nestjs/common";
 import { ConfigType } from "@nestjs/config";
 import { JsonWebTokenError, TokenExpiredError } from "@nestjs/jwt";
-import { getExpiredDate } from "@shared/index";
-import { toObjectId } from "@shared/utils/to-object-id";
-import { toStringSafe } from "@shared/utils/to-string-safe";
+import { Device, DEVICE_STATUS, OTP_TYPE, ROLE_KEY, USER_STATUS } from "@shared/types";
+import { getExpiredDate, toObjectId, toStringSafe } from "@shared/utils";
 import { DeviceService } from "apps/device-service/src/device.service";
-import { Device, DEVICE_STATUS } from "apps/device-service/src/models/device.model";
-import { OTP_TYPE } from "apps/otp-service/src/otp.model";
 import { OtpService } from "apps/otp-service/src/otp.service";
-import { ROLE_KEY } from "apps/role-service/src/models/role.model";
 import { RoleService } from "apps/role-service/src/role.service";
 import { HashingService } from "apps/token-service/src/services/hashing.service";
 import {
@@ -28,7 +24,6 @@ import {
   TOKEN_TYPE,
 } from "apps/token-service/src/services/json-web-token.service";
 import { TokenService } from "apps/token-service/src/services/token.service";
-import { USER_STATUS } from "apps/user-service/src/models/user.model";
 import { UserService } from "apps/user-service/src/user.service";
 import { ChangePasswordDto } from "./dto/change-password.dto";
 import { ForgotPasswordDto } from "./dto/forgot-password.dto";

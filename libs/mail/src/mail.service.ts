@@ -1,7 +1,7 @@
 import mailConfig from "@config/configs/mail.config";
 import { Inject, Injectable } from "@nestjs/common";
 import { ConfigType } from "@nestjs/config";
-import { OTP_TYPE } from "apps/otp-service/src/otp.model";
+import { OTP_TYPE } from "@shared/types";
 import dayjs from "dayjs";
 import * as nodemailer from "nodemailer";
 import {

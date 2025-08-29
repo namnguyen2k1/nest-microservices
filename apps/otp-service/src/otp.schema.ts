@@ -1,12 +1,12 @@
 import { MongodbUtils } from "@database/mongodb/mongodb.utils";
 import { SchemaFactory } from "@nestjs/mongoose";
 import { HydratedDocument } from "mongoose";
-import { OTP } from "./otp.model";
+import { OTPModel } from "./otp.model";
 
-export type OTPDocument = HydratedDocument<OTP>;
+export type OTPDocument = HydratedDocument<OTPModel>;
 
-export const OTPSchema = SchemaFactory.createForClass(OTP);
+export const OTPSchema = SchemaFactory.createForClass(OTPModel);
 
-OTPSchema.loadClass(OTP);
+OTPSchema.loadClass(OTPModel);
 
 MongodbUtils.customSchemaHooks({ schema: OTPSchema });

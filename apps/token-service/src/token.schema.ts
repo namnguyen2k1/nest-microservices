@@ -1,12 +1,12 @@
 import { MongodbUtils } from "@database/mongodb/mongodb.utils";
 import { SchemaFactory } from "@nestjs/mongoose";
 import { HydratedDocument } from "mongoose";
-import { Token } from "./token.model";
+import { TokenModel } from "./token.model";
 
-export type TokenDocument = HydratedDocument<Token>;
+export type TokenDocument = HydratedDocument<TokenModel>;
 
-export const TokenSchema = SchemaFactory.createForClass(Token);
+export const TokenSchema = SchemaFactory.createForClass(TokenModel);
 
-TokenSchema.loadClass(Token);
+TokenSchema.loadClass(TokenModel);
 
 MongodbUtils.customSchemaHooks({ schema: TokenSchema });

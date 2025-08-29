@@ -1,6 +1,6 @@
 import { ApiProperty } from "@nestjs/swagger";
+import { SSE_TYPE } from "@shared/types";
 import { IsEnum, IsNotEmpty } from "class-validator";
-import { SSE_TYPE } from "../services/sse.type";
 
 export class SendEventDto {
   @ApiProperty({

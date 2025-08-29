@@ -1,6 +1,6 @@
 import { Body, Controller, Delete, Get, Param, Post, Put } from "@nestjs/common";
 import { ApiTags } from "@nestjs/swagger";
-import { MongoIdPipe } from "@shared/index";
+import { MongoIdPipe } from "@shared/pipes";
 import { CreateRoleBodyDTO, GetRolesBodyDTO, UpdateRoleBodyDTO } from "./role.dto";
 import { RoleService } from "./role.service";
 

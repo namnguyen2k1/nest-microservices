@@ -1,9 +1,8 @@
 import { Injectable } from "@nestjs/common";
-import { formatDate } from "@shared/index";
+import { Device, DEVICE_STATUS, Location } from "@shared/types";
+import { formatDate } from "@shared/utils";
 import { toObjectId } from "@shared/utils/to-object-id";
 import { FilterQuery } from "mongoose";
-import { Device, DEVICE_STATUS } from "./models/device.model";
-import { Location } from "./models/location.model";
 import { DeviceRepository } from "./repositories/device.repository";
 import { LocationRepository } from "./repositories/location.repository";
 

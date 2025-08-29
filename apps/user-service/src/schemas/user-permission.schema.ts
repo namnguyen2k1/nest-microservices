@@ -1,12 +1,12 @@
 import { MongodbUtils } from "@database/mongodb/mongodb.utils";
 import { SchemaFactory } from "@nestjs/mongoose";
 import { HydratedDocument } from "mongoose";
-import { UserPermission } from "../models/user-permission.model";
+import { UserPermissionModel } from "../models/user-permission.model";
 
-export type UserPermissionDocument = HydratedDocument<UserPermission>;
+export type UserPermissionDocument = HydratedDocument<UserPermissionModel>;
 
-export const UserPermissionSchema = SchemaFactory.createForClass(UserPermission);
+export const UserPermissionSchema = SchemaFactory.createForClass(UserPermissionModel);
 
-UserPermissionSchema.loadClass(UserPermission);
+UserPermissionSchema.loadClass(UserPermissionModel);
 
 MongodbUtils.customSchemaHooks({ schema: UserPermissionSchema });

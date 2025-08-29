@@ -1,10 +1,10 @@
 import { Injectable, UnauthorizedException } from "@nestjs/common";
 import { JsonWebTokenError, TokenExpiredError } from "@nestjs/jwt";
-import { toObjectId } from "@shared/utils/to-object-id";
+import { Token } from "@shared/types";
+import { toObjectId } from "@shared/utils";
 import { DeviceService } from "apps/device-service/src/device.service";
 import { UserService } from "apps/user-service/src/user.service";
 import { FilterQuery } from "mongoose";
-import { Token } from "../token.model";
 import { TokenRepository } from "../token.repository";
 import { JsonWebTokenService } from "./json-web-token.service";
 

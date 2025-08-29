@@ -1,7 +1,7 @@
 import { ApiProperty, PickType } from "@nestjs/swagger";
-import { PagingDTO } from "@shared/index";
+import { PagingDTO } from "@shared/dto";
+import { ROLE_KEY, ROLE_STATUS } from "@shared/types";
 import { IsEnum, IsString, MaxLength } from "class-validator";
-import { ROLE_KEY, ROLE_STATUS } from "./models/role.model";
 
 export class GetRolesBodyDTO extends PagingDTO {}
 

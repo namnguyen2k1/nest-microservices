@@ -1,12 +1,12 @@
 import { MongodbUtils } from "@database/mongodb/mongodb.utils";
 import { SchemaFactory } from "@nestjs/mongoose";
 import { HydratedDocument } from "mongoose";
-import { User } from "../models/user.model";
+import { UserModel } from "../models/user.model";
 
-export type UserDocument = HydratedDocument<User>;
+export type UserDocument = HydratedDocument<UserModel>;
 
-export const UserSchema = SchemaFactory.createForClass(User);
+export const UserSchema = SchemaFactory.createForClass(UserModel);
 
-UserSchema.loadClass(User);
+UserSchema.loadClass(UserModel);
 
 MongodbUtils.customSchemaHooks({ schema: UserSchema });

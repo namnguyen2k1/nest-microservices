@@ -2,13 +2,13 @@ import { DB_COLLECTION } from "@database/mongodb/constant";
 import { MongodbUtils } from "@database/mongodb/mongodb.utils";
 import { SchemaFactory } from "@nestjs/mongoose";
 import { HydratedDocument } from "mongoose";
-import { Device } from "../models/device.model";
+import { DeviceModel } from "../models/device.model";
 
-export type DeviceDocument = HydratedDocument<Device>;
+export type DeviceDocument = HydratedDocument<DeviceModel>;
 
-export const DeviceSchema = SchemaFactory.createForClass(Device);
+export const DeviceSchema = SchemaFactory.createForClass(DeviceModel);
 
-DeviceSchema.loadClass(Device);
+DeviceSchema.loadClass(DeviceModel);
 
 DeviceSchema.virtual("location", {
   ref: DB_COLLECTION.LOCATION,

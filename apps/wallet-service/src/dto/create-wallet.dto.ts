@@ -1,5 +1,5 @@
 import { ApiProperty } from "@nestjs/swagger";
-import { MongoIdTransform } from "@shared/index";
+import { MongoIdTransform } from "@shared/utils";
 import { IsNumber, IsOptional, IsString, Length, Min } from "class-validator";
 
 export class CreateWalletDto {

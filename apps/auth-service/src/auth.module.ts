@@ -3,7 +3,7 @@ import { MailModule } from "@mail/mail.module";
 import { Module } from "@nestjs/common";
 import { APP_GUARD } from "@nestjs/core";
 import { DeviceModule } from "apps/device-service/src/device.module";
-import { NotificationServiceModule } from "apps/notification-service/src/notification-service.module";
+import { NotificationModule } from "apps/notification-service/src/notification.module";
 import { OtpModule } from "apps/otp-service/src/otp.module";
 import { RoleModule } from "apps/role-service/src/role.module";
 import { TokenModule } from "apps/token-service/src/token.module";
@@ -21,7 +21,7 @@ import { RequiredAccessGuard } from "./guards/required-access.guard";
     DeviceModule,
     TokenModule,
     CachingModule,
-    NotificationServiceModule,
+    NotificationModule,
     MailModule,
   ],
   controllers: [AuthController],

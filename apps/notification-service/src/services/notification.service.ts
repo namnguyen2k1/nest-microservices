@@ -1,9 +1,8 @@
 import { Injectable } from "@nestjs/common";
-import { PagingDTO } from "@shared/dto/paging.dto";
-import { parsePaging } from "@shared/utils/parse-paging";
-import { toObjectId } from "@shared/utils/to-object-id";
+import { PagingDTO } from "@shared/dto";
+import { Notification, NOTIFICATION_STATUS } from "@shared/types";
+import { parsePaging, toObjectId } from "@shared/utils";
 import { SendEventDto } from "../dto/send-event.dto";
-import { Notification, NOTIFICATION_STATUS } from "../notification.model";
 import { NotificationRepository } from "../notification.repository";
 import { SseService } from "./sse.service";
 

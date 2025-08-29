@@ -2,28 +2,16 @@ import { DB_COLLECTION } from "@database/mongodb/constant";
 import { BaseModel } from "@database/mongodb/models/base.model";
 import { MongodbUtils } from "@database/mongodb/mongodb.utils";
 import { Prop, Schema } from "@nestjs/mongoose";
-import { User } from "apps/user-service/src/models/user.model";
+import { Notification, NOTIFICATION_STATUS, NOTIFICATION_TYPE, User } from "@shared/types";
 import { IsEnum, IsOptional, IsString } from "class-validator";
 import { Types } from "mongoose";
-
-export enum NOTIFICATION_TYPE {
-  USER_EVENT = "NOTIFICATION_TYPE_USER_EVENT",
-  SYSTEM_EVENT = "NOTIFICATION_TYPE_SYSTEM_EVENT",
-}
-
-export enum NOTIFICATION_STATUS {
-  UNREAD = "NOTIFICATION_STATUS_UNREAD",
-  READ = "NOTIFICATION_STATUS_READ",
-  ARCHIVED = "NOTIFICATION_STATUS_ARCHIVED",
-  DELETED = "NOTIFICATION_STATUS_DELETED",
-}
 
 @Schema(
   MongodbUtils.createSchemaOptions({
     collection: DB_COLLECTION.NOTIFICATION,
   }),
 )
-export class Notification extends BaseModel {
+export class NotificationModel extends BaseModel implements Notification {
   @Prop({
     type: Types.ObjectId,
     ref: DB_COLLECTION.USER,

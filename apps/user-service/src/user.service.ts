@@ -1,13 +1,12 @@
 import { Injectable, NotFoundException } from "@nestjs/common";
-import { toStringSafe } from "@shared/index";
-import { toObjectId } from "@shared/utils/to-object-id";
+import { User, USER_STATUS } from "@shared/types";
+import { toObjectId, toStringSafe } from "@shared/utils";
 import { RoleService } from "apps/role-service/src/role.service";
 import { FilterQuery } from "mongoose";
 import { inspect } from "util";
 import { GetAllUsersDTO } from "./dto/get-all-users.dto";
 import { UpdateUserInfoDto } from "./dto/update-user-information.dto";
 import { UpdateUserPermissionDto } from "./dto/update-user-permission.dto";
-import { User, USER_STATUS } from "./models/user.model";
 import { ProfileRepository } from "./repositories/profile.repository";
 import { UserPermissionRepository } from "./repositories/user-permission.repository";
 import { UserRepository } from "./repositories/user.repository";

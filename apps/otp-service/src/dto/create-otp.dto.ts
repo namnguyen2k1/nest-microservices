@@ -1,6 +1,6 @@
 import { ApiProperty } from "@nestjs/swagger";
+import { OTP_TYPE } from "@shared/types";
 import { IsEnum, IsNumber, IsString } from "class-validator";
-import { OTP_TYPE } from "../otp.model";
 
 export class CreateOtpDTO {
   @ApiProperty({

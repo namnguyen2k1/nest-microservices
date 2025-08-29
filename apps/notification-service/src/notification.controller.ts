@@ -1,12 +1,12 @@
 import { Body, Controller, Delete, MessageEvent, Param, Post, Sse } from "@nestjs/common";
 import { ApiBearerAuth, ApiTags } from "@nestjs/swagger";
-import { PagingDTO } from "@shared/dto/paging.dto";
-import { MongoIdPipe } from "@shared/pipes/mongoid.pipe";
+import { PagingDTO } from "@shared/dto";
+import { MongoIdPipe } from "@shared/pipes";
+import { SSE_TYPE, SsePayload } from "@shared/types";
 import { interval, map, merge, Observable } from "rxjs";
 import { SendEventDto } from "./dto/send-event.dto";
 import { NotificationService } from "./services/notification.service";
 import { SseService } from "./services/sse.service";
-import { SSE_TYPE, SsePayload } from "./services/sse.type";
 
 @Controller("notifications")
 @ApiTags("notifications")

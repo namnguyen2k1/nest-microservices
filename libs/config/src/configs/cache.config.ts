@@ -1,5 +1,5 @@
 import { registerAs } from "@nestjs/config";
-import { parseRedis } from "@shared/index";
+import { parseRedis } from "@shared/utils";
 
 export default registerAs("CACHE_CONFIG", () => ({
   prefix: process.env.APP_NAME || "NestJS App",

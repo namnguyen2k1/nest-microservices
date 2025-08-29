@@ -1,4 +1,4 @@
-import { Location } from "apps/device-service/src/models/location.model";
+import { Location } from "@shared/types";
 import { Request } from "express";
 import geoip from "geoip-lite";
 

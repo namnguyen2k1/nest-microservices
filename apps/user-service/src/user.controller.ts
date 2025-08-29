@@ -1,6 +1,6 @@
 import { Body, Controller, Delete, Get, Param, Patch, Query } from "@nestjs/common";
 import { ApiBearerAuth, ApiTags } from "@nestjs/swagger";
-import { MongoIdPipe } from "@shared/index";
+import { MongoIdPipe } from "@shared/pipes";
 import { GetAllUsersDTO } from "./dto/get-all-users.dto";
 import { UpdateUserInfoDto } from "./dto/update-user-information.dto";
 import { UpdateUserPermissionDto } from "./dto/update-user-permission.dto";

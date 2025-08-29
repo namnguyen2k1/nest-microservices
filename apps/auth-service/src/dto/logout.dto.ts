@@ -1,5 +1,5 @@
 import { ApiProperty } from "@nestjs/swagger";
-import { MongoIdTransform } from "@shared/utils/mongoid-transform";
+import { MongoIdTransform } from "@shared/utils";
 import { IsString } from "class-validator";
 
 export class LogoutBodyDto {

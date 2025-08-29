@@ -1,6 +1,6 @@
 import { Body, Controller, Get, Param, Post } from "@nestjs/common";
 import { ApiTags } from "@nestjs/swagger";
-import { MongoIdPipe } from "@shared/pipes/mongoid.pipe";
+import { MongoIdPipe } from "@shared/pipes";
 import { CreateWalletDto } from "./dto/create-wallet.dto";
 import { DepositDto } from "./dto/deposit.dto";
 import { WithdrawDto } from "./dto/withdraw.dto";

@@ -1,23 +1,11 @@
 import { BaseEntity } from "@database/postgresql/entities/base.entity";
+import { Transaction, TRANSACTION_STATUS, TRANSACTION_TYPE, Wallet } from "@shared/types";
 import { Column, Entity, Index, ManyToOne } from "typeorm";
-import { Wallet } from "./wallet.entity";
-
-export enum TRANSACTION_STATUS {
-  PENDING = "PENDING",
-  SUCCESS = "SUCCESS",
-  FAILED = "FAILED",
-}
-
-export enum TRANSACTION_TYPE {
-  TOPUP = "TOPUP",
-  WITHDRAW = "WITHDRAW",
-  TRANSFER = "TRANSFER",
-  DEPOSIT = "DEPOSIT",
-}
+import { WalletEntity } from "./wallet.entity";
 
 @Entity("transactions")
-export class Transaction extends BaseEntity {
-  @ManyToOne(() => Wallet, (wallet) => wallet.transactions, {
+export class TransactionEntity extends BaseEntity implements Transaction {
+  @ManyToOne(() => WalletEntity, (wallet) => wallet.transactions, {
     onDelete: "CASCADE",
   })
   wallet: Wallet;

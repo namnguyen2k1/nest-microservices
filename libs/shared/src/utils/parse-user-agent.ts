@@ -1,4 +1,4 @@
-import { Device } from "apps/device-service/src/models/device.model";
+import { Device } from "@shared/types";
 import { Request } from "express";
 
 export function parseUserAgent(req: Request): Partial<Device> {

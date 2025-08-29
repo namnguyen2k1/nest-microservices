@@ -1,4 +1,4 @@
-import { toObjectId } from "@shared/utils/to-object-id";
+import { toObjectId } from "@shared/utils";
 import { ClientSession, Connection, FilterQuery, Model, QueryOptions } from "mongoose";
 import { BaseRepositoryInterface, FindAllData } from "./base-respository.interface";
 import { BaseEntity } from "./base.entity";

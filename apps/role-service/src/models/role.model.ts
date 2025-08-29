@@ -2,24 +2,15 @@ import { DB_COLLECTION } from "@database/mongodb/constant";
 import { BaseModel } from "@database/mongodb/models/base.model";
 import { MongodbUtils } from "@database/mongodb/mongodb.utils";
 import { Prop, Schema } from "@nestjs/mongoose";
+import { Role, ROLE_KEY, ROLE_STATUS } from "@shared/types";
 import { IsEnum, IsNumber, IsString } from "class-validator";
-
-export enum ROLE_KEY {
-  ADMIN = "ROLE_KEY_ADMIN",
-  CLIENT = "ROLE_KEY_CLIENT",
-}
-
-export enum ROLE_STATUS {
-  ACTIVE = "ROLE_STATUS_ACTIVE",
-  INACTIVE = "ROLE_STATUS_INACTIVE",
-}
 
 @Schema(
   MongodbUtils.createSchemaOptions({
     collection: DB_COLLECTION.ROLE,
   }),
 )
-export class Role extends BaseModel {
+export class RoleModel extends BaseModel implements Role {
   @Prop({
     type: String,
     enum: ROLE_KEY,

@@ -8,12 +8,10 @@ import {
 } from "@nestjs/common";
 import { Reflector } from "@nestjs/core";
 import { JsonWebTokenError, TokenExpiredError } from "@nestjs/jwt";
-import { toStringSafe } from "@shared/utils/to-string-safe";
-import { PERMISSION_KEY } from "apps/role-service/src/models/permission.model";
-import { Role } from "apps/role-service/src/models/role.model";
+import { PERMISSION_KEY, Role, User } from "@shared/types";
+import { toStringSafe } from "@shared/utils";
 import { RoleService } from "apps/role-service/src/role.service";
 import { JsonWebTokenService } from "apps/token-service/src/services/json-web-token.service";
-import { User } from "apps/user-service/src/models/user.model";
 import { UserService } from "apps/user-service/src/user.service";
 import { IS_PUBLIC_KEY } from "../decorators/public-api.decorator";
 import { AUTH_ERROR } from "../enum/auth-error-code.enum";

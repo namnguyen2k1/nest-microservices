@@ -1,12 +1,12 @@
 import { MongodbUtils } from "@database/mongodb/mongodb.utils";
 import { SchemaFactory } from "@nestjs/mongoose";
 import { HydratedDocument } from "mongoose";
-import { Profile } from "../models/profile.model";
+import { ProfileModel } from "../models/profile.model";
 
-export type ProfileDocument = HydratedDocument<Profile>;
+export type ProfileDocument = HydratedDocument<ProfileModel>;
 
-export const ProfileSchema = SchemaFactory.createForClass(Profile);
+export const ProfileSchema = SchemaFactory.createForClass(ProfileModel);
 
-ProfileSchema.loadClass(Profile);
+ProfileSchema.loadClass(ProfileModel);
 
 MongodbUtils.customSchemaHooks({ schema: ProfileSchema });

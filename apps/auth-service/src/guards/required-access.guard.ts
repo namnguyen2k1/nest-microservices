@@ -1,6 +1,6 @@
 import { CanActivate, ExecutionContext, ForbiddenException, Injectable } from "@nestjs/common";
 import { Reflector } from "@nestjs/core";
-import { ROLE_KEY } from "apps/role-service/src/models/role.model";
+import { ROLE_KEY } from "@shared/types";
 import { AccessData, REQUIRED_ACCESS } from "../decorators/required-access.decorator";
 import { AUTH_ERROR } from "../enum/auth-error-code.enum";
 import { AuthorizedRequest } from "../enum/authorized-request";

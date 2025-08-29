@@ -2,22 +2,16 @@ import { DB_COLLECTION } from "@database/mongodb/constant";
 import { BaseModel } from "@database/mongodb/models/base.model";
 import { MongodbUtils } from "@database/mongodb/mongodb.utils";
 import { Prop, Schema } from "@nestjs/mongoose";
-import { User } from "apps/user-service/src/models/user.model";
+import { Device, DEVICE_STATUS, User } from "@shared/types";
 import { IsEnum, IsOptional, IsString } from "class-validator";
 import { Types } from "mongoose";
-
-export enum DEVICE_STATUS {
-  ACTIVE = "DEVICE_STATUS_ACTIVE",
-  INACTIVE = "DEVICE_STATUS_INACTIVE",
-  BLOCK = "DEVICE_STATUS_BLOCK",
-}
 
 @Schema(
   MongodbUtils.createSchemaOptions({
     collection: DB_COLLECTION.DEVICE,
   }),
 )
-export class Device extends BaseModel {
+export class DeviceModel extends BaseModel implements Device {
   @Prop({
     type: Types.ObjectId,
     ref: DB_COLLECTION.USER,

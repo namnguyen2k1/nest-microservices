@@ -2,22 +2,17 @@ import { DB_COLLECTION } from "@database/mongodb/constant";
 import { BaseModel } from "@database/mongodb/models/base.model";
 import { MongodbUtils } from "@database/mongodb/mongodb.utils";
 import { Prop, Schema } from "@nestjs/mongoose";
-import { Role } from "apps/role-service/src/models/role.model";
+import { Role } from "@shared/types";
+import { User, USER_STATUS } from "@shared/types/user.types";
 import { IsEmail, IsEnum, IsOptional, IsString } from "class-validator";
 import { Types } from "mongoose";
-
-export enum USER_STATUS {
-  ACTIVE = "USER_STATUS_ACTIVE",
-  VERIFYING = "USER_STATUS_VERIFYING",
-  BLOCK = "USER_STATUS_BLOCK",
-}
 
 @Schema(
   MongodbUtils.createSchemaOptions({
     collection: DB_COLLECTION.USER,
   }),
 )
-export class User extends BaseModel {
+export class UserModel extends BaseModel implements User {
   @Prop({ type: Types.ObjectId, ref: DB_COLLECTION.ROLE, required: true })
   roleId: Types.ObjectId | Role;
 

@@ -1,16 +1,17 @@
 import { BaseEntity } from "@database/postgresql/entities/base.entity";
+import { Transaction, Wallet } from "@shared/types";
 import { Column, Entity, OneToMany, Unique } from "typeorm";
-import { Transaction } from "./transaction.entity";
+import { TransactionEntity } from "./transaction.entity";
 
 @Entity("wallets")
 @Unique(["userId"])
-export class Wallet extends BaseEntity {
+export class WalletEntity extends BaseEntity implements Wallet {
   @Column({ type: "varchar", length: 24 })
   userId: string; // relation with Users collection (MongoDB)
 
   @Column({ type: "bigint", default: 0 })
   balance: number;
 
-  @OneToMany(() => Transaction, (txn) => txn.wallet)
+  @OneToMany(() => TransactionEntity, (txn) => txn.wallet)
   transactions: Transaction[];
 }

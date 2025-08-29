@@ -3,13 +3,13 @@ import { BaseRepositoryAbstract } from "@database/repositories/abstract.reposito
 import { Injectable } from "@nestjs/common";
 import { InjectConnection, InjectModel } from "@nestjs/mongoose";
 import { Connection, Model } from "mongoose";
-import { Notification } from "./notification.model";
+import { NotificationModel } from "./notification.model";
 
 @Injectable()
-export class NotificationRepository extends BaseRepositoryAbstract<Notification> {
+export class NotificationRepository extends BaseRepositoryAbstract<NotificationModel> {
   constructor(
     @InjectModel(DB_COLLECTION.NOTIFICATION, DB_CONNECTION.PLAYGROUND)
-    readonly model: Model<Notification>,
+    readonly model: Model<NotificationModel>,
 
     @InjectConnection(DB_CONNECTION.PLAYGROUND)
     readonly connection: Connection,
