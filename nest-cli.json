@@ -46,6 +46,15 @@
         "tsConfigPath": "apps/role-service/tsconfig.app.json"
       }
     },
+    "token-service": {
+      "type": "application",
+      "root": "apps/token-service",
+      "entryFile": "main",
+      "sourceRoot": "apps/token-service/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/token-service/tsconfig.app.json"
+      }
+    },
     "user-service": {
       "type": "application",
       "root": "apps/user-service",
