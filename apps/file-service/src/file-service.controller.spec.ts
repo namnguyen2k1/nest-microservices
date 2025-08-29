@@ -11,7 +11,9 @@ describe('FileServiceController', () => {
       providers: [FileServiceService],
     }).compile();
 
-    fileServiceController = app.get<FileServiceController>(FileServiceController);
+    fileServiceController = app.get<FileServiceController>(
+      FileServiceController,
+    );
   });
 
   describe('root', () => {

@@ -1,8 +1,8 @@
-import { registerAs } from "@nestjs/config";
+import { registerAs } from '@nestjs/config';
 
-export default registerAs("DATABASE_CONFIG", () => {
+export default registerAs('DATABASE_CONFIG', () => {
   return {
-    env: process.env.APP_ENV || "development",
+    env: process.env.APP_ENV || 'development',
     mongo: {
       url: process.env.MONGO_URL,
       database: process.env.MONGO_DB_NAME,

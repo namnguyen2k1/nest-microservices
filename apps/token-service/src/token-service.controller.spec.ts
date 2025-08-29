@@ -11,7 +11,9 @@ describe('TokenServiceController', () => {
       providers: [TokenServiceService],
     }).compile();
 
-    tokenServiceController = app.get<TokenServiceController>(TokenServiceController);
+    tokenServiceController = app.get<TokenServiceController>(
+      TokenServiceController,
+    );
   });
 
   describe('root', () => {

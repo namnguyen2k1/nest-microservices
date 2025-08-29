@@ -11,7 +11,9 @@ describe('RoleServiceController', () => {
       providers: [RoleServiceService],
     }).compile();
 
-    roleServiceController = app.get<RoleServiceController>(RoleServiceController);
+    roleServiceController = app.get<RoleServiceController>(
+      RoleServiceController,
+    );
   });
 
   describe('root', () => {

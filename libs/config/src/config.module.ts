@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { ConfigModule as NestConfigModule } from '@nestjs/config';
+import { ConfigModule } from '@nestjs/config';
 import aiConfig from './configs/ai.config';
 import appConfig from './configs/app.config';
 import authConfig from './configs/auth.config';
@@ -10,7 +10,7 @@ import swaggerConfig from './configs/swagger.config';
 
 @Module({
   imports: [
-    NestConfigModule.forRoot({
+    ConfigModule.forRoot({
       isGlobal: true,
       cache: true,
       expandVariables: true,
@@ -26,4 +26,4 @@ import swaggerConfig from './configs/swagger.config';
     }),
   ],
 })
-export class ConfigModule {}
+export class ConfigurationModule {}

@@ -11,7 +11,9 @@ describe('AssistantServiceController', () => {
       providers: [AssistantServiceService],
     }).compile();
 
-    assistantServiceController = app.get<AssistantServiceController>(AssistantServiceController);
+    assistantServiceController = app.get<AssistantServiceController>(
+      AssistantServiceController,
+    );
   });
 
   describe('root', () => {

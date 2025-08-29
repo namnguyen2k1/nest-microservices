@@ -11,7 +11,9 @@ describe('DeviceServiceController', () => {
       providers: [DeviceServiceService],
     }).compile();
 
-    deviceServiceController = app.get<DeviceServiceController>(DeviceServiceController);
+    deviceServiceController = app.get<DeviceServiceController>(
+      DeviceServiceController,
+    );
   });
 
   describe('root', () => {
