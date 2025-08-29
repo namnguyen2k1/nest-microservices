@@ -35,6 +35,12 @@
       ],
       "database/database/*": [
         "libs/database/src/*"
+      ],
+      "mail/mail": [
+        "libs/mail/src"
+      ],
+      "mail/mail/*": [
+        "libs/mail/src/*"
       ]
     }
   }
