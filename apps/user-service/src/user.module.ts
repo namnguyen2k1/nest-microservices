@@ -1,8 +1,9 @@
 import { DB_COLLECTION, DB_CONNECTION } from "@database/mongodb/constant";
 import { MongodbModule } from "@database/mongodb/mongodb.module";
 import { Module } from "@nestjs/common";
+import { ClientsModule, Transport } from "@nestjs/microservices";
 import { MongooseModule } from "@nestjs/mongoose";
-import { RoleModule } from "apps/role-service/src/role.module";
+import { SERVICE_TOKEN } from "@shared/constants";
 import { ProfileRepository } from "./repositories/profile.repository";
 import { UserPermissionRepository } from "./repositories/user-permission.repository";
 import { UserRepository } from "./repositories/user.repository";
@@ -15,7 +16,6 @@ import { UserService } from "./user.service";
 @Module({
   imports: [
     MongodbModule,
-    RoleModule,
     MongooseModule.forFeature(
       [
         {
@@ -33,6 +33,13 @@ import { UserService } from "./user.service";
       ],
       DB_CONNECTION.PLAYGROUND,
     ),
+    ClientsModule.register([
+      {
+        name: SERVICE_TOKEN.ROLE,
+        transport: Transport.TCP,
+        options: { host: "0.0.0.0", port: 4001 },
+      },
+    ]),
   ],
   controllers: [UserController],
   providers: [UserRepository, UserPermissionRepository, ProfileRepository, UserService],

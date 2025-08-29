@@ -74,7 +74,7 @@ export class RoleService {
       permissions: PERMISSION_KEY[];
     }
   > {
-    await this.checkExisted({ _id: roleId });
+    await this.checkExisted({ id: roleId });
     const pipeline = buildRoleWithPermissionPipeline({
       match: {
         _id: toObjectId(roleId),

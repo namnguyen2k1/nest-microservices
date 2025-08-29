@@ -1,0 +1,4 @@
+export const ROLE_PATTERN = {
+  GET_ROLE_BY_ID: { cmd: "GET_ROLE_BY_ID" },
+  GET_PERMISSION_BY_KEY: { cmd: "GET_PERMISSION_BY_KEY" },
+};

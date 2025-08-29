@@ -1,6 +1,9 @@
 import { Body, Controller, Delete, Get, Param, Post, Put } from "@nestjs/common";
+import { MessagePattern } from "@nestjs/microservices";
 import { ApiTags } from "@nestjs/swagger";
+import { ROLE_PATTERN } from "@shared/constants";
 import { MongoIdPipe } from "@shared/pipes";
+import { PERMISSION_KEY } from "@shared/types";
 import { CreateRoleBodyDTO, GetRolesBodyDTO, UpdateRoleBodyDTO } from "./role.dto";
 import { RoleService } from "./role.service";
 
@@ -73,5 +76,15 @@ export class RoleController {
     return {
       _message: "Remove role successfully",
     };
+  }
+
+  @MessagePattern(ROLE_PATTERN.GET_ROLE_BY_ID)
+  async getRoleById(roleId: string) {
+    return await this.roleService.findById(roleId);
+  }
+
+  @MessagePattern(ROLE_PATTERN.GET_PERMISSION_BY_KEY)
+  async getPermissionByKey(key: PERMISSION_KEY) {
+    return await this.roleService.findPermissionByKey(key);
   }
 }

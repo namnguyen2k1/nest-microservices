@@ -1,8 +1,10 @@
-import { Injectable, NotFoundException } from "@nestjs/common";
+import { Inject, Injectable, NotFoundException } from "@nestjs/common";
+import { ClientProxy } from "@nestjs/microservices";
+import { ROLE_PATTERN, SERVICE_TOKEN } from "@shared/constants";
 import { User, USER_STATUS } from "@shared/types";
 import { toObjectId, toStringSafe } from "@shared/utils";
-import { RoleService } from "apps/role-service/src/role.service";
 import { FilterQuery } from "mongoose";
+import { firstValueFrom, lastValueFrom } from "rxjs";
 import { inspect } from "util";
 import { GetAllUsersDTO } from "./dto/get-all-users.dto";
 import { UpdateUserInfoDto } from "./dto/update-user-information.dto";
@@ -17,7 +19,8 @@ export class UserService {
     private readonly userRepo: UserRepository,
     private readonly profileRepo: ProfileRepository,
     private readonly userPermissionRepo: UserPermissionRepository,
-    private readonly roleService: RoleService,
+
+    @Inject(SERVICE_TOKEN.ROLE) private readonly roleClient: ClientProxy,
   ) {}
 
   get userModel() {
@@ -80,7 +83,11 @@ export class UserService {
     const profile = await this.profileRepo.findOne({
       userId: userId,
     });
-    const { permissions, ...role } = await this.roleService.findById(toStringSafe(user.roleId));
+    const { permissions, ...role } = await lastValueFrom(
+      this.roleClient.send(ROLE_PATTERN.GET_ROLE_BY_ID, {
+        id: toStringSafe(user.roleId),
+      }),
+    );
     return {
       ...user,
       profile,
@@ -96,7 +103,9 @@ export class UserService {
 
     // 2. Resolve permission IDs from the provided keys
     const listPermissions = await Promise.allSettled(
-      permissions.map((key) => this.roleService.findPermissionByKey(key)),
+      permissions.map((key) => {
+        return lastValueFrom(this.roleClient.send(ROLE_PATTERN.GET_PERMISSION_BY_KEY, key));
+      }),
     );
     const permissionIds: string[] = listPermissions
       .filter((p) => p.status === "fulfilled")
@@ -116,7 +125,9 @@ export class UserService {
 
     // 4. Update the user's role if a roleKey is provided
     if (roleKey) {
-      const roleId = await this.roleService.getRoleId(roleKey);
+      const roleId = await firstValueFrom(
+        this.roleClient.send(ROLE_PATTERN.GET_ROLE_BY_ID, roleKey),
+      );
       await this.update({
         userId,
         data: { roleId },
