@@ -1,6 +1,7 @@
 import mailConfig from "@config/configs/mail.config";
 import { Inject, Injectable } from "@nestjs/common";
 import { ConfigType } from "@nestjs/config";
+import { OTP_TYPE } from "apps/otp-service/src/otp.model";
 import dayjs from "dayjs";
 import * as nodemailer from "nodemailer";
 import {
@@ -10,14 +11,6 @@ import {
   verifyForgotPasswordTemplate,
   verifyRegisterTemplate,
 } from "./templates";
-
-export enum OTP_TYPE {
-  VERIFY_2FA = "OTP_TYPE_VERIFY_2FA",
-  VERIFY_REGISTER = "OTP_TYPE_VERIFY_REGISTER",
-  VERIFY_DEVICE = "OTP_TYPE_VERIFY_DEVICE",
-  VERIFY_FORGOT_PASSWORD = "OTP_TYPE_VERIFY_FORGOT_PASSWORD",
-  VERIFY_CHANGE_PASSWORD = "OTP_TYPE_VERIFY_CHANGE_PASSWORD",
-}
 
 export interface SendOtpPayload {
   email: string;

@@ -1,8 +1,8 @@
 import { NestFactory } from "@nestjs/core";
-import { TokenServiceModule } from "./token-service.module";
+import { TokenModule } from "./token.module";
 
 async function bootstrap() {
-  const app = await NestFactory.create(TokenServiceModule);
+  const app = await NestFactory.create(TokenModule);
   await app.listen(process.env.port ?? 3000);
 }
 bootstrap();
