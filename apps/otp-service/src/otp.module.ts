@@ -1,3 +1,4 @@
+import { ConfigurationModule } from "@config/config.module";
 import { DB_COLLECTION, DB_CONNECTION } from "@database/mongodb/constant";
 import { MongodbModule } from "@database/mongodb/mongodb.module";
 import { Module } from "@nestjs/common";
@@ -9,6 +10,7 @@ import { OtpService } from "./otp.service";
 
 @Module({
   imports: [
+    ConfigurationModule,
     MongodbModule,
     MongooseModule.forFeature(
       [

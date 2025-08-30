@@ -18,9 +18,14 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./apps/nest-monorepo/test/jest-e2e.json",
-    "start:role": "nest start role-service",
-    "start:user": "nest start user-service",
-    "start:user-service": "concurrently \"yarn start:role\" \"yarn start:user\""
+    "start:role-service": "nest start role-service",
+    "start:otp-service": "nest start otp-service",
+    "start:notification-service": "nest start notification-service",   
+    "start:device-service": "nest start device-service",
+    "start:wallet-service": "nest start wallet-service",
+    "start:user-service": "concurrently \"nest start role-service\" \"nest start user-service\"",
+    "start:token-service": "concurrently \"nest start device-service\" \"nest start user-service\" \"nest start token-service\"",
+    "start:auth-service": "concurrently \"nest start user-service\" \"nest start role-service\" \"nest start device-service\" \"nest start otp-service\" \"nest start token-service\" \"nest start notification-service\""
   },
   "dependencies": {
     "@nestjs/cache-manager": "^3.0.1",

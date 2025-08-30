@@ -1,4 +1,5 @@
 import { CachingModule } from "@cache/caching.module";
+import { ConfigurationModule } from "@config/config.module";
 import { MailModule } from "@mail/mail.module";
 import { Module } from "@nestjs/common";
 import { APP_GUARD } from "@nestjs/core";
@@ -15,6 +16,7 @@ import { RequiredAccessGuard } from "./guards/required-access.guard";
 
 @Module({
   imports: [
+    ConfigurationModule,
     UserModule,
     RoleModule,
     OtpModule,

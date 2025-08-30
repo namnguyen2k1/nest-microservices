@@ -1,3 +1,4 @@
+import { ConfigurationModule } from "@config/config.module";
 import appConfig from "@config/configs/app.config";
 import { DB_COLLECTION, DB_CONNECTION } from "@database/mongodb/constant";
 import { MongodbModule } from "@database/mongodb/mongodb.module";
@@ -12,6 +13,7 @@ import { SseService } from "./services/sse.service";
 
 @Module({
   imports: [
+    ConfigurationModule,
     MongodbModule,
     MongooseModule.forFeature(
       [

@@ -1,3 +1,4 @@
+import { ConfigurationModule } from "@config/config.module";
 import { PostgreSQLModule } from "@database/postgresql/postgresql.module";
 import { Module } from "@nestjs/common";
 import { TypeOrmModule } from "@nestjs/typeorm";
@@ -11,10 +12,10 @@ import { WalletService } from "./wallet.service";
 
 @Module({
   imports: [
+    ConfigurationModule,
     PostgreSQLModule,
     UserModule,
     TypeOrmModule.forFeature([WalletEntity, TransactionEntity]),
-    //
   ],
   controllers: [WalletController],
   providers: [WalletRepository, TransactionRepository, WalletService],

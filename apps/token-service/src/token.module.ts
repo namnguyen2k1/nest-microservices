@@ -1,3 +1,4 @@
+import { ConfigurationModule } from "@config/config.module";
 import { DB_COLLECTION, DB_CONNECTION } from "@database/mongodb/constant";
 import { MongodbModule } from "@database/mongodb/mongodb.module";
 import { Module } from "@nestjs/common";
@@ -16,6 +17,7 @@ const PROVIDERS = [JsonWebTokenService, HashingService, TokenService];
 
 @Module({
   imports: [
+    ConfigurationModule,
     MongodbModule,
     DeviceModule,
     UserModule,
