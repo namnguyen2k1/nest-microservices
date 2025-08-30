@@ -1,0 +1,2 @@
+- tao proxy: wrap clients lai trong api-gateway
+- tach dto, response type ra khoi tung service, them cho dto

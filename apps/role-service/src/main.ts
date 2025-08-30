@@ -8,6 +8,9 @@ async function bootstrap() {
     options: { host: "0.0.0.0", port: 4001 },
     logger: ["warn", "error"],
   });
+  app.status.subscribe((status) => {
+    console.log("[role-service] Status:", status);
+  });
   await app.listen();
   console.log(`[server] role-service is listening`);
 }

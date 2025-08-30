@@ -10,6 +10,21 @@
   "monorepo": true,
   "root": "apps/nest-monorepo",
   "projects": {
+    "api-gateway": {
+      "type": "application",
+      "root": "apps/api-gateway",
+      "entryFile": "main",
+      "sourceRoot": "apps/api-gateway/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/api-gateway/tsconfig.app.json",
+        "builder": {
+          "type": "swc",
+          "options": {
+            "swcrcPath": ".swcrc"
+          }
+        }
+      }
+    },
     "auth-service": {
       "type": "application",
       "root": "apps/auth-service",
@@ -26,6 +41,15 @@
       "sourceRoot": "libs/cache/src",
       "compilerOptions": {
         "tsConfigPath": "libs/cache/tsconfig.lib.json"
+      }
+    },
+    "cli": {
+      "type": "application",
+      "root": "apps/cli",
+      "entryFile": "main",
+      "sourceRoot": "apps/cli/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/cli/tsconfig.app.json"
       }
     },
     "config": {

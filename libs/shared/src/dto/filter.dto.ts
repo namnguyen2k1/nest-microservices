@@ -1,6 +1,10 @@
 import { ApiPropertyOptional } from "@nestjs/swagger";
 import { IsOptional, IsString } from "class-validator";
 
+export interface Filter {
+  text?: string;
+}
+
 export class FilterDTO {
   @ApiPropertyOptional({
     description: "Text search keyword",
@@ -8,5 +12,5 @@ export class FilterDTO {
   })
   @IsString()
   @IsOptional()
-  text: string = "";
+  text?: string;
 }

@@ -20,12 +20,13 @@
     "test:e2e": "jest --config ./apps/nest-monorepo/test/jest-e2e.json",
     "start:role-service": "nest start role-service",
     "start:otp-service": "nest start otp-service",
-    "start:notification-service": "nest start notification-service",   
+    "start:notification-service": "nest start notification-service",
     "start:device-service": "nest start device-service",
     "start:wallet-service": "nest start wallet-service",
     "start:user-service": "concurrently \"nest start role-service\" \"nest start user-service\"",
     "start:token-service": "concurrently \"nest start device-service\" \"nest start user-service\" \"nest start token-service\"",
-    "start:auth-service": "concurrently \"nest start user-service\" \"nest start role-service\" \"nest start device-service\" \"nest start otp-service\" \"nest start token-service\" \"nest start notification-service\""
+    "start:auth-service": "concurrently \"nest start user-service\" \"nest start role-service\" \"nest start device-service\" \"nest start otp-service\" \"nest start token-service\" \"nest start notification-service\"",
+    "cli": "ts-node -r tsconfig-paths/register tools/main.ts"
   },
   "dependencies": {
     "@nestjs/cache-manager": "^3.0.1",
@@ -73,6 +74,7 @@
     "eslint-plugin-prettier": "^5.2.2",
     "globals": "^16.0.0",
     "jest": "^29.7.0",
+    "nest-commander": "^3.19.0",
     "prettier": "^3.4.2",
     "source-map-support": "^0.5.21",
     "supertest": "^7.0.0",
@@ -104,6 +106,7 @@
       "<rootDir>/libs/"
     ],
     "moduleNameMapper": {
+      "^@app/cli(|/.*)$": "<rootDir>/libs/cli/src/$1",
       "^@cache/(.*)$": "<rootDir>/libs/cache/src/$1",
       "^@config/(.*)$": "<rootDir>/libs/config/src/$1",
       "^@database/(.*)$": "<rootDir>/libs/database/src/$1",

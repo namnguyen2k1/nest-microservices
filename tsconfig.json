@@ -18,12 +18,30 @@
     "strictBindCallApply": false,
     "noFallthroughCasesInSwitch": false,
     "paths": {
-      "@cache/*": ["libs/cache/src/*"],
-      "@config/*": ["libs/config/src/*"],
-      "@database/*": ["libs/database/src/*"],
-      "@mail/*": ["libs/mail/src/*"],
-      "@queue/*": ["libs/queue/src/*"],
-      "@shared/*": ["libs/shared/src/*"]
+      "@app/cli": [
+        "libs/cli/src"
+      ],
+      "@app/cli/*": [
+        "libs/cli/src/*"
+      ],
+      "@cache/*": [
+        "libs/cache/src/*"
+      ],
+      "@config/*": [
+        "libs/config/src/*"
+      ],
+      "@database/*": [
+        "libs/database/src/*"
+      ],
+      "@mail/*": [
+        "libs/mail/src/*"
+      ],
+      "@queue/*": [
+        "libs/queue/src/*"
+      ],
+      "@shared/*": [
+        "libs/shared/src/*"
+      ]
     }
   }
 }

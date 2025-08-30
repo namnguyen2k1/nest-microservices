@@ -1,6 +1,7 @@
 import { ConflictException, Injectable, NotFoundException } from "@nestjs/common";
 
 import { CachingService } from "@cache/caching.service";
+import { GetRolesRes } from "@shared/dto/role";
 import { Permission, PERMISSION_KEY, Role, ROLE_KEY, ROLE_STATUS } from "@shared/types";
 import { logObj, parsePaging, toObjectId } from "@shared/utils";
 import { FilterQuery } from "mongoose";
@@ -44,7 +45,7 @@ export class RoleService {
     return role;
   }
 
-  async findAllRoles(dto: GetRolesBodyDTO) {
+  async findAllRoles(dto: GetRolesBodyDTO): Promise<GetRolesRes> {
     const count: number = await this.roleRepo.count({
       deletedAt: null,
       status: ROLE_STATUS.ACTIVE,

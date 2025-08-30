@@ -2,7 +2,13 @@ import { ApiPropertyOptional } from "@nestjs/swagger";
 import { Type } from "class-transformer";
 import { IsInt, IsObject, IsOptional, Min } from "class-validator";
 
-export class PagingDTO {
+export interface Paging {
+  offset?: number;
+  sort?: Record<string, 1 | -1>;
+  limit?: number;
+}
+
+export class PagingDTO implements Paging {
   @ApiPropertyOptional({
     description: "Offset (page)",
     default: 0,

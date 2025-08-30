@@ -1,7 +1,7 @@
 import { Inject, Injectable, NotFoundException } from "@nestjs/common";
 import { ClientProxy } from "@nestjs/microservices";
 import { ROLE_PATTERN, SERVICE_TOKEN } from "@shared/constants";
-import { User, USER_STATUS } from "@shared/types";
+import { PERMISSION_KEY, Role, User, USER_STATUS } from "@shared/types";
 import { toObjectId, toStringSafe } from "@shared/utils";
 import { FilterQuery } from "mongoose";
 import { firstValueFrom, lastValueFrom } from "rxjs";
@@ -84,9 +84,12 @@ export class UserService {
       userId: userId,
     });
     const { permissions, ...role } = await lastValueFrom(
-      this.roleClient.send(ROLE_PATTERN.GET_ROLE_BY_ID, {
-        id: toStringSafe(user.roleId),
-      }),
+      this.roleClient.send<
+        Role & {
+          permissions: PERMISSION_KEY[];
+        },
+        string
+      >(ROLE_PATTERN.GET_ROLE_BY_ID, toStringSafe(user.roleId)),
     );
     return {
       ...user,
