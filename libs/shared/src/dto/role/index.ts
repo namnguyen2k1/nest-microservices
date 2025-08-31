@@ -1,3 +1,3 @@
-export * from "./create-role-body.dto";
-export * from "./get-roles-body.dto";
-export * from "./update-role-body.dto";
+export * from "./create-role.dto";
+export * from "./get-all-roles.dto";
+export * from "./update-role.dto";

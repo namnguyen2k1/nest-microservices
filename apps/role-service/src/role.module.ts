@@ -6,7 +6,7 @@ import { MongooseModule } from "@nestjs/mongoose";
 import { PermissionRepository } from "./repositories/permission.repository";
 import { RolePermissionRepository } from "./repositories/role-permission.repository";
 import { RoleRepository } from "./repositories/role.repository";
-import { RoleController } from "./role.controller";
+import { RoleMessageController } from "./role.message.controller";
 import { RoleService } from "./role.service";
 import { PermissionSchema } from "./schemas/permission.schema";
 import { RolePermissionSchema } from "./schemas/role-permission.schema";
@@ -34,7 +34,7 @@ import { RoleSchema } from "./schemas/role.schema";
       DB_CONNECTION.PLAYGROUND,
     ),
   ],
-  controllers: [RoleController],
+  controllers: [RoleMessageController],
   providers: [RoleRepository, RolePermissionRepository, PermissionRepository, RoleService],
   exports: [RoleService],
 })

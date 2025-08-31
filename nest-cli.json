@@ -16,13 +16,7 @@
       "entryFile": "main",
       "sourceRoot": "apps/api-gateway/src",
       "compilerOptions": {
-        "tsConfigPath": "apps/api-gateway/tsconfig.app.json",
-        "builder": {
-          "type": "swc",
-          "options": {
-            "swcrcPath": ".swcrc"
-          }
-        }
+        "tsConfigPath": "apps/api-gateway/tsconfig.app.json"
       }
     },
     "auth-service": {

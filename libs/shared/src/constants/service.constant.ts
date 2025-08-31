@@ -1,4 +1,4 @@
-export enum AppFeature {
+export enum SERVICE {
   ROLE = "role-service",
   OTP = "otp-service",
   NOTIFICATION = "notification-service",
@@ -7,4 +7,5 @@ export enum AppFeature {
   USER = "user-service",
   TOKEN = "token-service",
   AUTH = "auth-service",
+  API_GATEWAY = "api-gateway",
 }

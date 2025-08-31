@@ -3,9 +3,9 @@ import { Role } from "@shared/types";
 
 export interface GetRolesBody extends Paging {}
 
-export class GetRolesBodyDTO extends PagingDTO {}
+export class GetRolesBodyDTO extends PagingDTO implements GetRolesBody {}
 
-export interface GetRolesRes {
+export interface GetRolesResult {
   count: number;
   data: Role &
     {

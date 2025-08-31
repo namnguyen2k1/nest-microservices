@@ -1,6 +1,6 @@
 import { Inject, Injectable, NotFoundException } from "@nestjs/common";
 import { ClientProxy } from "@nestjs/microservices";
-import { ROLE_PATTERN, SERVICE_TOKEN } from "@shared/constants";
+import { ROLE_PATTERN, SERVICE } from "@shared/constants";
 import { PERMISSION_KEY, Role, User, USER_STATUS } from "@shared/types";
 import { toObjectId, toStringSafe } from "@shared/utils";
 import { FilterQuery } from "mongoose";
@@ -20,8 +20,12 @@ export class UserService {
     private readonly profileRepo: ProfileRepository,
     private readonly userPermissionRepo: UserPermissionRepository,
 
-    @Inject(SERVICE_TOKEN.ROLE) private readonly roleClient: ClientProxy,
-  ) {}
+    @Inject(SERVICE.ROLE) private readonly roleClient: ClientProxy,
+  ) {
+    this.roleClient.status.subscribe((status) => {
+      console.log("[microservice] role-proxy status:", status);
+    });
+  }
 
   get userModel() {
     return this.userRepo.model;

@@ -1,11 +1,8 @@
 import { toObjectId } from "@shared/utils";
 import { ClientSession, Connection, FilterQuery, Model, QueryOptions } from "mongoose";
-import { BaseRepositoryInterface, FindAllData } from "./base-respository.interface";
-import { BaseEntity } from "./base.entity";
+import { BaseRepository, FindAllData } from "./base-repository.type";
 
-export abstract class BaseRepositoryAbstract<T extends BaseEntity>
-  implements BaseRepositoryInterface<T>
-{
+export abstract class BaseMongodbRepository<T> implements BaseRepository<T> {
   protected constructor(
     private readonly _model: Model<T>,
     private readonly _connection: Connection,

@@ -1,14 +1,26 @@
-import { Body, Controller, Delete, Param, Post, Put } from "@nestjs/common";
-import { ApiTags } from "@nestjs/swagger";
+import { Body, Controller, Delete, Get, Param, Post, Put } from "@nestjs/common";
+import { ApiBearerAuth, ApiTags } from "@nestjs/swagger";
 import { CreateRoleBodyDTO, GetRolesBodyDTO, UpdateRoleBodyDTO } from "@shared/dto/role";
 import { MongoIdPipe } from "@shared/pipes";
 import { RoleProxy } from "@shared/proxy";
 
 @Controller("roles")
 @ApiTags("roles")
-// @ApiBearerAuth()
+@ApiBearerAuth()
 export class RoleController {
   constructor(private readonly roleProxy: RoleProxy) {}
+
+  @Get("initial-database")
+  // @NoCache()
+  // @PublicAPI()
+  async initialDatabase() {
+    // Only run the first time after starting the app
+    await this.roleProxy.initialDatabase();
+    return {
+      _message: "Check and initial database successfully",
+    };
+  }
+
   @Post("get-list")
   // @NoCache()
   // @RequiredAccess({

@@ -1,11 +1,11 @@
 import { FilterQuery, QueryOptions } from "mongoose";
 
-export type FindAllData<T> = {
+export interface FindAllData<T> {
   readonly count: number;
   readonly data: T[];
-};
+}
 
-export interface BaseRepositoryInterface<T> {
+export interface BaseRepository<T> {
   create(data: T | any): Promise<T>;
   createOrUpdateIfExisted(filter: FilterQuery<T>, data: Partial<T>): Promise<T>;
   findOne(filter?: FilterQuery<T>, options?: QueryOptions<T>): Promise<T | null>;

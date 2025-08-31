@@ -1,14 +1,18 @@
 import { ConflictException, Injectable, NotFoundException } from "@nestjs/common";
 
 import { CachingService } from "@cache/caching.service";
-import { GetRolesRes } from "@shared/dto/role";
+import {
+  CreateRoleBodyDTO,
+  GetRolesBodyDTO,
+  GetRolesResult,
+  UpdateRoleBodyDTO,
+} from "@shared/dto/role";
 import { Permission, PERMISSION_KEY, Role, ROLE_KEY, ROLE_STATUS } from "@shared/types";
 import { logObj, parsePaging, toObjectId } from "@shared/utils";
 import { FilterQuery } from "mongoose";
 import { PermissionRepository } from "./repositories/permission.repository";
 import { RolePermissionRepository } from "./repositories/role-permission.repository";
 import { RoleRepository } from "./repositories/role.repository";
-import { CreateRoleBodyDTO, GetRolesBodyDTO, UpdateRoleBodyDTO } from "./role.dto";
 import { buildRoleWithPermissionPipeline } from "./role.pipeline";
 
 @Injectable()
@@ -45,7 +49,7 @@ export class RoleService {
     return role;
   }
 
-  async findAllRoles(dto: GetRolesBodyDTO): Promise<GetRolesRes> {
+  async findAllRoles(dto: GetRolesBodyDTO): Promise<GetRolesResult> {
     const count: number = await this.roleRepo.count({
       deletedAt: null,
       status: ROLE_STATUS.ACTIVE,
